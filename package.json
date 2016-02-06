@@ -1,0 +1,36 @@
+{
+  "name": "html-stats",
+  "version": "1.0.0",
+  "description": "Utility for collecting HTML files stats",
+  "bin": "bin/html-stats",
+  "main": "lib/html-stats.js",
+  "scripts": {
+    "check-code-issues": "eslint .",
+    "check-code-style": "jscs -v .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pre-commit": [
+    "check-code-issues",
+    "check-code-style"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andre487/html-stats.git"
+  },
+  "keywords": [
+    "html",
+    "stats",
+    "size"
+  ],
+  "author": "Andrey Prokopyuk <andrey.prokopyuk@gmail.com> (http://andre.life)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andre487/html-stats/issues"
+  },
+  "homepage": "https://github.com/andre487/html-stats#readme",
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "jscs": "^2.9.0",
+    "pre-commit": "^1.1.2"
+  }
+}
