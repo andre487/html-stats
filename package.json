@@ -7,7 +7,7 @@
   "scripts": {
     "check-code-issues": "eslint .",
     "check-code-style": "jscs -v .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*.test.js"
   },
   "pre-commit": [
     "check-code-issues",
@@ -29,8 +29,15 @@
   },
   "homepage": "https://github.com/andre487/html-stats#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^1.10.3",
     "jscs": "^2.9.0",
+    "mocha": "^2.4.5",
     "pre-commit": "^1.1.2"
+  },
+  "dependencies": {
+    "htmlparser": "^1.7.7",
+    "lodash": "^4.2.1",
+    "q": "^1.4.1"
   }
 }
