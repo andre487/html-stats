@@ -38,6 +38,7 @@
   "dependencies": {
     "htmlparser": "^1.7.7",
     "lodash": "^4.2.1",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "utf8-bytes": "0.0.1"
   }
 }
