@@ -36,6 +36,7 @@
     "pre-commit": "^1.1.2"
   },
   "dependencies": {
+    "glob": "^6.0.4",
     "htmlparser": "^1.7.7",
     "lodash": "^4.2.1",
     "q": "^1.4.1",
