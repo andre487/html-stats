@@ -5,6 +5,7 @@ Simple utility for collecting HTML files stats
 [![Build Status](https://travis-ci.org/andre487/html-stats.svg?branch=master)](https://travis-ci.org/andre487/html-stats)
 [![Code Climate](https://codeclimate.com/github/andre487/html-stats/badges/gpa.svg)](https://codeclimate.com/github/andre487/html-stats)
 [![bitHound Overall Score](https://www.bithound.io/github/andre487/html-stats/badges/score.svg)](https://www.bithound.io/github/andre487/html-stats)
+[![npm version](https://badge.fury.io/js/html-stats.svg)](https://badge.fury.io/js/html-stats)
 
 Installation:
 ```sh
