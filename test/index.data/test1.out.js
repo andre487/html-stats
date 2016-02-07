@@ -6,6 +6,7 @@ module.exports = {
     css: 75,
     scripts: 38,
     comments: 60,
-    text: 152,
+    text: 49,
+    spaces: 103,
     rawTotal: 552
 };
