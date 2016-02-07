@@ -3,7 +3,7 @@ var Assert = require('chai').assert;
 var Parser = require('../lib/parser');
 var StatCounter = require('../lib/stat-counter');
 
-var countLength = require('../lib/count-utf8-length');
+var countBytes = require('../lib/count-utf8-bytes');
 
 describe('stat-counter', function () {
     describe('#createDomStatsObject()', function () {
@@ -26,7 +26,7 @@ describe('stat-counter', function () {
                 var html = '<!DOCTYPE html>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'directives', 15);
 
                     Assert.equal(stats.directives, stats.total);
@@ -42,7 +42,7 @@ describe('stat-counter', function () {
                 var html = '<p data-foo="bar">Some text</p>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'attributes', 14);
                     Assert.propertyVal(stats, 'tags', 8);
                     Assert.propertyVal(stats, 'text', 9);
@@ -60,7 +60,7 @@ describe('stat-counter', function () {
                 var html = '<p data-foo="bar">Some text 1</p><p data-foo="bar">Some text 2</p>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'attributes', 28);
                     Assert.propertyVal(stats, 'tags', 16);
                     Assert.propertyVal(stats, 'text', 22);
@@ -78,7 +78,7 @@ describe('stat-counter', function () {
                 var html = '<p>Текст в юникоде</p>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'attributes', 0);
                     Assert.propertyVal(stats, 'tags', 7);
                     Assert.propertyVal(stats, 'text', 28);
@@ -96,7 +96,7 @@ describe('stat-counter', function () {
                 var html = '<!-- Comment 1 --><p>Some text</p>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'comments', 18);
                     Assert.propertyVal(stats, 'tags', 7);
                     Assert.propertyVal(stats, 'text', 9);
@@ -114,7 +114,7 @@ describe('stat-counter', function () {
                 var html = '<script type="text/javascript">alert(1);</script>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'attributes', 22);
                     Assert.propertyVal(stats, 'tags', 18);
                     Assert.propertyVal(stats, 'scripts', 9);
@@ -132,7 +132,7 @@ describe('stat-counter', function () {
                 var html = '<script type="text/javascript" src="foo.js"></script>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'attributes', 34);
                     Assert.propertyVal(stats, 'tags', 19);
 
@@ -149,7 +149,7 @@ describe('stat-counter', function () {
                 var html = '<style type="text/css">body {font-size: 10px;}</style>';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'attributes', 15);
                     Assert.propertyVal(stats, 'tags', 16);
                     Assert.propertyVal(stats, 'css', 23);
@@ -167,7 +167,7 @@ describe('stat-counter', function () {
                 var html = '<img src="foo.jpg" />';
 
                 function check(stats) {
-                    Assert.propertyVal(stats, 'total', countLength(html));
+                    Assert.propertyVal(stats, 'total', countBytes(html));
                     Assert.propertyVal(stats, 'attributes', 13);
                     Assert.propertyVal(stats, 'tags', 8);
 
