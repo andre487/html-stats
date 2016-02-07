@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Utility for collecting HTML files stats",
   "bin": "bin/html-stats",
-  "main": "lib/html-stats.js",
+  "main": "lib/index.js",
   "scripts": {
     "check-code-issues": "eslint .",
     "check-code-style": "jscs -v .",

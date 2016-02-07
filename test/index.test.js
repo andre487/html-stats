@@ -7,7 +7,7 @@ var _ = require('lodash');
 var HtmlStats = require('../lib');
 
 describe('#calcDocumentStats()', function () {
-    it.only('should calculate stats correctly', function () {
+    it('should calculate stats correctly', function () {
         var inHtml = read('test1.in.html');
         var expected = require('./index.data/test1.out');
 
@@ -28,6 +28,24 @@ describe('#calcDocumentStats()', function () {
         }
 
         return HtmlStats.calcDocumentStats(inHtml).then(check);
+    });
+});
+
+describe('#calcDocumentListStats()', function () {
+    it('should calculate stats by docs array', function () {
+        var inHtml = read('test1.in.html');
+        var expected = require('./index.data/test1.out');
+
+        function check(statsList) {
+            Assert.isArray(statsList);
+            Assert.lengthOf(statsList, 1);
+
+            _.keys(expected).forEach(function (name) {
+                Assert.propertyVal(statsList[0], name, expected[name]);
+            });
+        }
+
+        return HtmlStats.calcDocumentListStats([inHtml]).then(check);
     });
 });
 
