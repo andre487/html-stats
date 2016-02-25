@@ -14,7 +14,7 @@ npm install [-g] html-stats
 
 Usage:
 ```sh
-html-stats '*/page.html'
+html-stats struct '*/page.html'
 ```
 
 You can use any globs as file path.
