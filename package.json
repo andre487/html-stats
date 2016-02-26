@@ -1,6 +1,6 @@
 {
   "name": "html-stats",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Utility for collecting HTML files stats",
   "bin": "bin/html-stats",
   "main": "lib/index.js",

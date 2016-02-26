@@ -4,9 +4,9 @@ var path = require('path');
 var Assert = require('chai').assert;
 var _ = require('lodash');
 
-var HtmlStats = require('../lib');
+var structStats = require('../lib/struct-stats');
 
-describe('html-stats', function () {
+describe('struct-stats', function () {
     describe('#calcDocumentStats()', function () {
         it('should calculate stats correctly', function () {
             var inHtml = read('test1.in.html');
@@ -28,7 +28,7 @@ describe('html-stats', function () {
                 });
             }
 
-            return HtmlStats.calcDocumentStats(inHtml).then(check);
+            return structStats.calcDocumentStats(inHtml).then(check);
         });
     });
 
@@ -46,7 +46,7 @@ describe('html-stats', function () {
                 });
             }
 
-            return HtmlStats.calcDocumentListStats([inHtml]).then(check);
+            return structStats.calcDocumentListStats([inHtml]).then(check);
         });
     });
 
@@ -57,7 +57,7 @@ describe('html-stats', function () {
                 stats.push({foo: i});
             }
 
-            var res = HtmlStats.calcSummaryStats(stats);
+            var res = structStats.calcSummaryStats(stats);
 
             Assert.property(res, 'foo');
 
