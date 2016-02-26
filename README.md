@@ -15,9 +15,13 @@ npm install [-g] html-stats
 Usage:
 ```sh
 html-stats struct '*/page.html'
+
+html-stats selectors '*/page.html'
 ```
 
 You can use any globs as file path.
+
+## struct
 
 Results are sizes in bytes of different page parts. Results keys:
   * **total** – total size extracted from AST,
@@ -119,3 +123,52 @@ Results example:
 }
 ```
 
+## selectors
+
+Results are selectors `selector -> count` table.
+
+Example:
+```json
+{
+  ".link": 16220,
+  ".i-bem": 13016,
+  ".serp-url__link": 5473,
+  ".link_target_vertical-service": 2496,
+  ".service": 2400,
+  ".link_ajax_yes": 2370,
+  ".navigation__item": 1920,
+  ".serp-item__greenurl": 1633,
+  ".serp-url": 1633,
+  ".serp-url__item": 1537,
+  ".clearfix": 1537,
+  ".serp-item__title-link": 1249,
+  ".favicon": 1249,
+  ".favicon__icon": 1249,
+  ".favicon_page_0": 1249,
+  ".serp-item__title": 1249,
+  ".serp-item": 1249,
+  ".show-feedback": 1152,
+  ".service_hoverable_yes": 1152,
+  ".service__name": 1152,
+  ".navigation__item_service_yes": 1152,
+  ".link_service-link_yes": 1056,
+  ".service__url": 1056,
+  ".popup2_autoclosable_yes": 1056,
+  ".popup2": 1056,
+  ".link_pseudo_yes": 1056,
+  ".link_cropped_no": 960,
+  ".show-feedback_type_default": 960,
+  ".serp-url__mark": 960,
+  ".footer__link": 960,
+  ".serp-url__arrow": 960,
+  ".popup2_target_anchor": 960,
+  ".popup2_theme_normal": 960,
+  ".serp-url__popup": 960,
+  ".serp-item__text": 960,
+  ".needsclick": 960,
+  ".related__item": 930,
+  ".serp": 768,
+  ".z-images__link": 768,
+  ".navigation__item_extra_hidden": 672
+}
+```
