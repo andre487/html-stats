@@ -1,7 +1,7 @@
 var Assert = require('chai').assert;
 
 var Parser = require('../lib/parser');
-var StatCounter = require('../lib/stat-counter');
+var StatCounter = require('../lib/struct-stat-counter');
 
 var countBytes = require('../lib/count-utf8-bytes');
 
